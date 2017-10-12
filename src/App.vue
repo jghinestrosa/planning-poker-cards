@@ -1,25 +1,16 @@
 <template>
   <div id="app">
-    <card :value="1"></card>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-  import Card from './components/Card.vue';
-  export default {
-    components: {
-      Card
-    }
-}
+  export default {}
 </script>
 
 <style>
 #app {
   width: 100vw;
   height: 100vh;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
 }
 </style>
