@@ -23,6 +23,16 @@
 <style>
   .small-card {
     display: inline-block;
+    box-shadow: 0px 0px 2px #000000;
+    margin: 0.5em;
+    border-radius: 0.5em;
+    transition-property: transform;
+    transition-duration: 0.1s;
+  }
+
+  .small-card:hover {
+    cursor: pointer;
+    transform: scale(1.02);
   }
 
   .small-card-wrapper {
@@ -35,8 +45,7 @@
     user-select: none;
     border-radius: 0.5em;
     border: 1px solid black;
-    background: white;
-    margin: 0.5em;
+    background: #fff;
   }
 
   .small-card-number {
