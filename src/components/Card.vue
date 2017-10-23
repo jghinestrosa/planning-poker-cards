@@ -2,9 +2,7 @@
   <div class="card">
     <div class="card-wrapper" v-bind:class="{ backside: backside }" v-on:click="flip">
       <div class="side-wrapper">
-        <div class="side front">
-          <span class="number">{{ value }}</span>
-        </div>
+        <front-card :value="value" :content-size="contentSize"></front-card>
         <div class="side back">
           <div class="back-pattern-wrapper">
             <div class="back-inner-pattern-wrapper">
@@ -21,7 +19,13 @@
 </template>
 
 <script>
+  import FrontCard from './FrontCard.vue';
+
   export default {
+    components: {
+      FrontCard
+    },
+
     name: 'card',
 
     props: {
@@ -30,7 +34,8 @@
 
     data() {
       return {
-        backside: false
+        backside: false,
+        contentSize: 5
       };
     },
 
@@ -58,13 +63,16 @@
     perspective: 1000px;
   }
   .card-wrapper {
-    width: 15em;
-    height: 20em;
+    width: 17em;
+    height: 24em;
     user-select: none;
     display: inline-block;
     transform-style: preserve-3d;
     transition-property: transform;
     transition-duration: 1s;
+    border-radius: 0.5em;
+    border: 1px solid #808080;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.5);
   }
 
   .side-wrapper {
@@ -80,7 +88,6 @@
     height: 100%;
     width: 100%;
     border-radius: 0.5em;
-    border: 1px solid black;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -91,10 +98,6 @@
   .side.back {
     transform: rotateY(180deg) translateZ(1px);
     background: #ffffff;
-  }
-
-  .number {
-    font-size: 5em;
   }
 
   .backside {

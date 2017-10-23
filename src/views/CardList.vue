@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="card-list">
     <small-card v-for="card in cards" :key="card.id" :value="card.id" v-on:click.native="pickCard(card.id)"></small-card>
   </div>
 </template>
@@ -22,9 +22,8 @@
 </script>
 
 <style>
-#list-container {
-  width: 100vw;
-  height: 100vh;
+
+.card-list {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
