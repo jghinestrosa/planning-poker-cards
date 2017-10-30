@@ -141,6 +141,11 @@
     border-bottom-right-radius: 1em;
   }
 
+  .back-pattern-wrapper .circle.top-left:after {
+    top: 0;
+    left: 0;
+  }
+
   .back-pattern-wrapper .circle.top-right {
     top: -1px;
     right: -1px;
@@ -150,6 +155,7 @@
   }
 
   .back-pattern-wrapper .circle.top-right:after {
+    top: 0;
     right: 0;
   }
 
