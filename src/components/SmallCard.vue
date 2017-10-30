@@ -15,7 +15,7 @@
     name: 'small-card',
 
     props: {
-      value: Number
+      value: String
     },
 
     data() {

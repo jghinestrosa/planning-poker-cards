@@ -8,7 +8,7 @@ import cards from './data/cards.json';
 Vue.use(Router);
 
 const routes = [
-  { path: '/card/:id', component: CardDetail, props: true },
+  { path: '/card/:index', component: CardDetail, props: (route) => ({ index: route.params.index, cards }) },
   { path: '/', component: CardList, props: { cards } }
 ];
 

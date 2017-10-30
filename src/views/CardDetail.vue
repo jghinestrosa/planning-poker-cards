@@ -1,26 +1,77 @@
 <template>
   <div id="container">
-    <card :value="id"></card>
+    <carousel :perPage="1" ref="carousel">
+      <slide v-for="card in cards">
+        <div class="slide-card-wrapper">
+          <card :value="card.id"></card>
+        </div>
+      </slide>
+    </carousel>
   </div>
 </template>
 
 <script>
   import Card from '../components/Card.vue';
+  import { Carousel, Slide } from 'vue-carousel';
+
   export default {
     components: {
-      Card
+      Card,
+      Carousel,
+      Slide
     },
-    props: ['id']
+
+    props: ['index', 'cards'],
+
+    data: function() {
+      return {
+        currentCardIndex: this.index,
+        cardList: this.cards
+      };
+    },
+
+    mounted: function() {
+      // Hack to start with the correct slide
+      for (let i = 0; i < this.currentCardIndex; i++) {
+        this.$refs.carousel.advancePage();
+      }
+    },
+
+    computed: {
+      currentCard: function() {
+        return this.cardList[this.currentCardIndex];
+      }
+    },
+
+    methods: {
+      next: function() {
+        this.currentCardIndex = (this.currentCardIndex + 1) % this.cardList.length;
+      },
+
+      previous: function() {
+        let index = (this.currentCardIndex - 1) % this.cardList.length || this.cardList.length - 1;
+        if (index < 0) {
+          this.currentCardIndex = this.cardList.length - 1;
+          return;
+        }
+        this.currentCardIndex = index;
+      }
+    }
   }
 </script>
 
 <style>
-#container {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
-}
+
+  #container {
+    /* TODO: Try to find a better way to center vertically */
+    position: relative;
+    top: 15%;
+  }
+
+  .slide-card-wrapper {
+    text-align: center;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+  }
+
 </style>

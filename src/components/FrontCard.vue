@@ -13,7 +13,7 @@
     name: 'front-card',
 
     props: {
-      value: String, // TODO: Fix the value type here and SmallCard
+      value: String,
       contentSize: Number
     },
 
