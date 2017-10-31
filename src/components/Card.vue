@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <div class="card-wrapper" v-bind:class="{ backside: backside }" v-on:click="flip">
+    <div class="card-wrapper" v-bind:class="{ backside: backside }" v-on:click="flip" v-on:touchmove.prevent>
       <div class="side-wrapper">
         <front-card :value="value" :content-size="contentSize"></front-card>
         <div class="side back">
