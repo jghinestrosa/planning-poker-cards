@@ -1,6 +1,6 @@
 <template>
   <div id="container">
-    <carousel :perPage="1" ref="carousel">
+    <carousel :perPage="1" :paginationEnabled="false" ref="carousel">
       <slide v-for="card in cards">
         <div class="slide-card-wrapper">
           <card :value="card.id"></card>
