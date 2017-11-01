@@ -52,19 +52,4 @@
     transform: scale(1.02);
   }
 
-  .small-card-wrapper {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-    user-select: none;
-    border-radius: 0.5em;
-    border: 1px solid #c33;
-    width: 85%;
-    height: 90%;
-  }
-
-  .small-card-number {
-    font-size: 3em;
-  }
 </style>

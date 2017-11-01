@@ -41,21 +41,6 @@
       currentCard: function() {
         return this.cardList[this.currentCardIndex];
       }
-    },
-
-    methods: {
-      next: function() {
-        this.currentCardIndex = (this.currentCardIndex + 1) % this.cardList.length;
-      },
-
-      previous: function() {
-        let index = (this.currentCardIndex - 1) % this.cardList.length || this.cardList.length - 1;
-        if (index < 0) {
-          this.currentCardIndex = this.cardList.length - 1;
-          return;
-        }
-        this.currentCardIndex = index;
-      }
     }
   }
 </script>
