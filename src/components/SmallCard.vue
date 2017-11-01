@@ -46,6 +46,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    will-change: transform;
   }
 
   .small-card:hover {
