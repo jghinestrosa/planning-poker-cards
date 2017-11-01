@@ -54,7 +54,13 @@
 <style>
   .card {
     perspective: 1000px;
+    display: inline-block;
   }
+
+  .card:hover {
+    cursor: pointer;
+  }
+
   .card-wrapper {
     width: 17em;
     height: 24em;
