@@ -28,7 +28,11 @@
     data() {
       return {
         backside: false,
-        contentSize: 5
+
+        // TODO: In Chrome for Android, 4.2em is max font-size
+        // to render a emoji. Choose a font to be the same
+        // in all platforms to be consistent
+        contentSize: 4.2 
       };
     },
 
