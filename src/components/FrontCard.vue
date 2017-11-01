@@ -35,6 +35,7 @@
     background: -webkit-radial-gradient(center, ellipse cover, #ffffff 60%,#fffce5 100%);
     background: radial-gradient(ellipse at center, #ffffff 60%,#fffce5 100%);
     border-radius: 0.5em;
+    color: #000;
   }
 
   .front-card {

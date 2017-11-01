@@ -1,6 +1,8 @@
 <template>
   <div class="card-list">
-    <small-card v-for="(card, index) in cards" :key="card.id" :value="card.id" v-on:click.native="pickCard(index)"></small-card>
+    <router-link v-for="(card, index) in cards" :key="card.id" :to="getCardURL(index)">
+      <small-card :value="card.id"></small-card>
+    </router-link>
   </div>
 </template>
 
@@ -14,8 +16,8 @@
       cards: Array
     },
     methods: {
-      pickCard: function(index) {
-        this.$router.push({ path: `/card/${index}`}); // TODO: Replace with a link
+      getCardURL: function(index) {
+        return `/card/${index}`;
       }
     }
   }
