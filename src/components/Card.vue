@@ -55,16 +55,15 @@
   .card {
     perspective: 1000px;
     display: inline-block;
-  }
-
-  .card:hover {
-    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 
   .card-wrapper {
     width: 17em;
     height: 24em;
-    user-select: none;
     display: inline-block;
     transform-style: preserve-3d;
     transition-property: transform;

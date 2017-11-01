@@ -42,9 +42,15 @@
     width: 10em;
     height: 14em;
     background: #fff;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 
-  .small-card:hover { cursor: pointer; transform: scale(1.02); }
+  .small-card:hover {
+    transform: scale(1.02);
+  }
 
   .small-card-wrapper {
     display: flex;

@@ -1,7 +1,7 @@
 <template>
   <div class="card-list">
-    <router-link v-for="(card, index) in cards" :key="card.id" :to="getCardURL(index)">
-      <small-card :value="card.id"></small-card>
+    <router-link v-for="(card, index) in cards" :key="index" :to="getCardURL(index)">
+      <small-card :value="card.value"></small-card>
     </router-link>
   </div>
 </template>
