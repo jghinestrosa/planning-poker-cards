@@ -33,9 +33,6 @@
     align-items: center;
     transform: rotateY(180deg) translateZ(1px);
     background: #ffffff;
-    background: -moz-radial-gradient(center, ellipse cover, #ffffff 60%, #fffce5 100%);
-    background: -webkit-radial-gradient(center, ellipse cover, #ffffff 60%,#fffce5 100%);
-    background: radial-gradient(ellipse at center, #ffffff 60%,#fffce5 100%);
     border-radius: 0.5em;
   }
 

@@ -31,9 +31,6 @@
     justify-content: center;
     align-items: center;
     background: #ffffff;
-    background: -moz-radial-gradient(center, ellipse cover, #ffffff 60%, #fffce5 100%);
-    background: -webkit-radial-gradient(center, ellipse cover, #ffffff 60%,#fffce5 100%);
-    background: radial-gradient(ellipse at center, #ffffff 60%,#fffce5 100%);
     border-radius: 0.5em;
     color: #000;
   }
@@ -44,7 +41,6 @@
     left: 0;
     height: 100%;
     width: 100%;
-
   }
 
   .front-card-content {
