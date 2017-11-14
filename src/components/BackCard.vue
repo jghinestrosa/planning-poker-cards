@@ -123,7 +123,7 @@
   }
 
   .back-inner-pattern-wrapper {
-    position: absolute;
+    position: relative;
     width: 90%;
     height: 90%;
     border: 1px solid #c33;
