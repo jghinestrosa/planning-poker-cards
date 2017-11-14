@@ -1,0 +1,9 @@
+{
+  "name": "Planning Poker Cards",
+  "description": "A deck of cards for planning poker",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffc981",
+  "theme_color": "#ffc981",
+  "orientation": "portrait"
+}
