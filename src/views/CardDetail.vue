@@ -1,96 +1,91 @@
 <template>
   <div id="container">
-    <carousel :perPage="1" :paginationEnabled="false" ref="carousel">
-      <slide v-for="card in cards">
+    <swipe ref="carousel">
+      <swipe-item class="slide" v-for="card in cards" :key="card.value">
         <div class="slide-card-wrapper">
           <card :value="card.value" class="card-detail-item"></card>
         </div>
-      </slide>
-    </carousel>
+      </swipe-item>
+    </swipe>
   </div>
 </template>
 
 <script>
-  import Card from '../components/Card.vue';
-  import { Carousel, Slide } from 'vue-carousel';
-  const keys = {
-    LEFT: 37,
-    RIGHT: 39
-  };
+import Card from '../components/Card.vue';
+import { Carousel, Slide } from 'vue-carousel';
+import { Swipe, SwipeItem } from 'vue-swipe';
 
-  export default {
-    components: {
-      Card,
-      Carousel,
-      Slide
-    },
+const keys = {
+  LEFT: 37,
+  RIGHT: 39
+};
 
-    props: ['index', 'cards'],
+export default {
+  components: {
+    Card
+  },
 
-    data: function() {
-      return {
-        currentCardIndex: this.index,
-        cardList: this.cards
-      };
-    },
+  props: ['index', 'cards'],
 
-    created: function() {
-      window.addEventListener('keyup', this.onKeyUp);
-    },
+  data: function() {
+    return {
+      currentCardIndex: this.index,
+      cardList: this.cards
+    };
+  },
 
-    mounted: function() {
-      // Hack to start with the correct slide
-      for (let i = 0; i < this.currentCardIndex; i++) {
-        this.$refs.carousel.advancePage();
+  created: function() {
+    window.addEventListener('keyup', this.onKeyUp);
+  },
+
+  mounted: function() {
+    this.$refs.carousel.slide(this.currentCardIndex, 0);
+  },
+
+  beforeDestroy: function() {
+    window.removeEventListener('keyup', this.onKeyUp);
+  },
+
+  computed: {
+    currentCard: function() {
+      return this.cardList[this.currentCardIndex];
+    }
+  },
+
+  methods: {
+    onKeyUp: function(event) {
+      if (event.which === keys.RIGHT) {
+        this.showNextCard();
+        return;
+      }
+
+      if (event.which === keys.LEFT) {
+        this.showPreviousCard();
       }
     },
 
-    beforeDestroy: function() {
-      window.removeEventListener('keyup', this.onKeyUp);
+    showNextCard: function() {
+      this.$refs.carousel.next();
     },
 
-    computed: {
-      currentCard: function() {
-        return this.cardList[this.currentCardIndex];
-      }
-    },
-
-    methods: {
-      onKeyUp: function(event) {
-        if (event.which === keys.RIGHT) {
-          this.showNextCard();
-          return;
-        }
-
-        if (event.which === keys.LEFT) {
-          this.showPreviousCard();
-        }
-      },
-
-      showNextCard: function() {
-        this.$refs.carousel.advancePage();
-      },
-
-      showPreviousCard: function() {
-        this.$refs.carousel.advancePage('backward');
-      },
+    showPreviousCard: function() {
+      this.$refs.carousel.prev();
     }
   }
+}
 </script>
 
 <style>
 
-  #container {
-    /* TODO: Try to find a better way to center vertically */
-    position: relative;
-    top: 15%;
+  .slide {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
   }
 
-  .slide-card-wrapper {
-    text-align: center;
-    padding-top: 1.5em;
-    padding-bottom: 1.5em;
-  }
 
   .card-detail-item {
     -webkit-tap-highlight-color: rgba(0,0,0,0);

@@ -4,8 +4,10 @@ import App from './App.vue';
 import CardDetail from './views/CardDetail.vue';
 import CardList from './views/CardList.vue';
 import cards from './data/cards.json';
+import VSwipe from 'vswipe';
 
 Vue.use(Router);
+Vue.use(VSwipe);
 
 const routes = [
   { path: '/card/:index', component: CardDetail, props: (route) => ({ index: route.params.index, cards }) },
