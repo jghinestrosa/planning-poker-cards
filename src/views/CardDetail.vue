@@ -12,8 +12,6 @@
 
 <script>
 import Card from '../components/Card.vue';
-import { Carousel, Slide } from 'vue-carousel';
-import { Swipe, SwipeItem } from 'vue-swipe';
 
 const keys = {
   LEFT: 37,
