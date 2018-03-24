@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <div class="card-wrapper" v-bind:class="{ backside: backside }" v-on:click="flip" v-on:touchmove.prevent>
+    <div class="card-wrapper" v-bind:class="{ backside: upsideDown }" v-on:touchmove.prevent>
       <div class="side-wrapper">
         <front-card :value="value" :content-size="contentSize"></front-card>
         <back-card></back-card>
@@ -22,35 +22,17 @@
     name: 'card',
 
     props: {
-      value: String // TODO: Fix the value type here and SmallCard
+      value: String, // TODO: Fix the value type here and SmallCard
+      upsideDown: false
     },
 
     data() {
       return {
-        backside: false,
-
         // TODO: In Chrome for Android, 4.2em is max font-size
         // to render a emoji. Choose a font to be the same
         // in all platforms to be consistent
-        contentSize: 4.2 
+        contentSize: 4.2
       };
-    },
-
-    methods: {
-      showUpside: function() {
-        this.backside = false;
-      },
-      showBackside: function() {
-        this.backside = true;
-      },
-      flip: function(event) {
-        if (this.backside) {
-          this.showUpside();
-        }
-        else {
-          this.showBackside();
-        }
-      }
     }
   }
 </script>

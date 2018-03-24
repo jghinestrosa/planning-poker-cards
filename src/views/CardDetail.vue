@@ -3,7 +3,7 @@
     <swipe ref="carousel">
       <swipe-item class="slide" v-for="card in cards" :key="card.value">
         <div class="slide-card-wrapper">
-          <card :value="card.value" class="card-detail-item"></card>
+          <card :value="card.value" class="card-detail-item" :upside-down="upsideDown" v-on:click.native="flipAllCards"></card>
         </div>
       </swipe-item>
     </swipe>
@@ -30,7 +30,8 @@ export default {
   data: function() {
     return {
       currentCardIndex: this.index,
-      cardList: this.cards
+      cardList: this.cards,
+      upsideDown: false
     };
   },
 
@@ -70,6 +71,10 @@ export default {
 
     showPreviousCard: function() {
       this.$refs.carousel.prev();
+    },
+
+    flipAllCards: function() {
+      this.upsideDown = !this.upsideDown;
     }
   }
 }
