@@ -9,18 +9,18 @@
 </template>
 
 <script>
-  export default {
-    name: 'front-card',
+export default {
+  name: 'front-card',
 
-    props: {
-      value: String,
-      contentSize: Number
-    },
+  props: {
+    value: String,
+    contentSize: Number
+  },
 
-    data() {
-      return {};
-    }
+  data: function() {
+    return {};
   }
+};
 </script>
 
 <style>

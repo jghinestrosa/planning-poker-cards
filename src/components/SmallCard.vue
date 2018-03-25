@@ -5,25 +5,25 @@
 </template>
 
 <script>
-  import FrontCard from './FrontCard.vue';
+import FrontCard from './FrontCard';
 
-  export default {
-    components: {
-      FrontCard
-    },
+export default {
+  components: {
+    FrontCard
+  },
 
-    name: 'small-card',
+  name: 'small-card',
 
-    props: {
-      value: String
-    },
+  props: {
+    value: String
+  },
 
-    data() {
-      return {
-        contentSize: 3
-      };
-    }
+  data: function() {
+    return {
+      contentSize: 3
+    };
   }
+};
 </script>
 
 <style>

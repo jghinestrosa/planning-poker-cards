@@ -7,20 +7,21 @@
 </template>
 
 <script>
-  import SmallCard from '../components/SmallCard.vue';
-  export default {
-    components: {
-      SmallCard
-    },
-    props: {
-      cards: Array
-    },
-    methods: {
-      getCardURL: function(index) {
-        return `/card/${index}`;
-      }
+import SmallCard from '../components/SmallCard';
+
+export default {
+  components: {
+    SmallCard
+  },
+  props: {
+    cards: Array
+  },
+  methods: {
+    getCardURL: function(index) {
+      return `/card/${index}`;
     }
   }
+};
 </script>
 
 <style>

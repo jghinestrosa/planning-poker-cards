@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import Card from '../components/Card.vue';
+import Card from '../components/Card';
 
 const keys = {
   LEFT: 37,
@@ -75,7 +75,7 @@ export default {
       this.upsideDown = !this.upsideDown;
     }
   }
-}
+};
 </script>
 
 <style>

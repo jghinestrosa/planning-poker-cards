@@ -12,11 +12,9 @@
 </template>
 
 <script>
-
-  export default {
-    name: 'back-card'
-  }
-
+export default {
+  name: 'back-card'
+};
 </script>
 
 <style>

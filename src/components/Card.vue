@@ -10,31 +10,31 @@
 </template>
 
 <script>
-  import FrontCard from './FrontCard.vue';
-  import BackCard from './BackCard.vue';
+import FrontCard from './FrontCard';
+import BackCard from './BackCard';
 
-  export default {
-    components: {
-      FrontCard,
-      BackCard
-    },
+export default {
+  components: {
+    FrontCard,
+    BackCard
+  },
 
-    name: 'card',
+  name: 'card',
 
-    props: {
-      value: String, // TODO: Fix the value type here and SmallCard
-      upsideDown: false
-    },
+  props: {
+    value: String, // TODO: Fix the value type here and SmallCard
+    upsideDown: false
+  },
 
-    data() {
-      return {
-        // TODO: In Chrome for Android, 4.2em is max font-size
-        // to render a emoji. Choose a font to be the same
-        // in all platforms to be consistent
-        contentSize: 4.2
-      };
-    }
+  data: function() {
+    return {
+      // TODO: In Chrome for Android, 4.2em is max font-size
+      // to render a emoji. Choose a font to be the same
+      // in all platforms to be consistent
+      contentSize: 4.2
+    };
   }
+};
 </script>
 
 <style>
